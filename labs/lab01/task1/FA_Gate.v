@@ -16,10 +16,11 @@ module FA_Gate(
 );
   wire ps, pc1, pc2;
 
-  xor (ps,  a,   b);
-  and (pc1, a,   b);
-  xor (sum, cin, ps);
-  and (pc2, cin, ps);
+  // Gate order swapped: outputs and intermediate gates placed before inputs
   or  (cout, pc1, pc2);
+  and (pc2,  cin, ps);
+  xor (sum,  cin, ps);
+  and (pc1,  a,   b);
+  xor (ps,   a,   b);
 
 endmodule
