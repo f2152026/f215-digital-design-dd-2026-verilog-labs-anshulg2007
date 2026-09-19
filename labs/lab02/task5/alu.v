@@ -11,7 +11,7 @@
 //
 // Write your own tb.v, use it to find both problems, then fix this file
 // and re-test before submitting.
-
+`timescale 1ns/1ps
 module alu (
   input      [3:0] a,
   input      [3:0] b,
